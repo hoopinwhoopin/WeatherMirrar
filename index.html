@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WeaCast</title>
+</head>
+<body id="background" class="bg-[url(`./images/clear.gif`)] bg-center bg-cover bg-no-repeat min-h-screen w-full flex flex-col gap-1 justify-start p-12">
+       
+
+    <div class="md:flex block  justify-between w-screen">
+
+         <!---Day, date and time--->
+       <div class="block w-1/4 justify-around items-center bg-inherit  p-1 gap-2">
+            <div class=" text-white text-justify text-sm h-5 w-40 font-serif font-bold rounded-lg p-1" id="date"></div>
+            <div class=" text-white text-justify text-sm h-5 w-40 font-serif font-bold rounded-lg p-1" id="time"></div>
+       </div>
+        
+         <!---App title--->   
+        <div class="w-full md:mr-72 mr-44 mt-5 flex justify-center items-center animate-bounce">
+    
+        </div>  
+    </div>
+    
+
+<div class="min-h-screen w-full flex flex-col gap-5 justify-start p-3 items-center">
+        
+    <!---Search bar--->
+    <form
+        action=""
+        method="get"
+        id="form"
+        class="flex w-4/5 md:w-3/5 lg:w-[35%] items-center justify-center gap-2"
+        >
+        <input
+        type ="text"
+        name ="city"
+        id ="town"
+        placeholder="Enter a city..."
+        required
+        class="py-2 px-3 w-full rounded-full bg-white text-white text-lg outline outline-2 backdrop-blur-lg ease-in-out duration-300 outline-white/70 focus:bg-white/20"
+        />
+        <button type="submit" class="">
+        <ion-icon
+            class="text-white font-black text-2xl p-3 bg-white/50 rounded-full"
+            name="search"
+        ></ion-icon>
+
+        </button>
+    </form>
+
+    <!---City Weather display--->
+    <div
+    class="p-4 w-4/5 justify-between flex rounded-3xl shadow-2xl cursor-pointer transform ease-in-out bg-white/20 duration-500 backdrop-blur-sm md:w-3/5 lg:w-[35%] hover:scale-[105%]"
+    >
+        <div id="left" class="flex flex-col">
+        <div id="top" class="mb-6">
+            <p id="temperature-main" class="font-semibold text-4xl text-white">24 °<span>C</span></p>
+            <p class="font-semibold text-xl text-white">Now</p>
+        </div>
+        <p class="font-semibold text-2xl text-white"><span id="city">Bengaluru</span>, <span id="country">IN</span></p>
+        </div>
+        <!-- right -->
+        <div id="right" class="flex flex-col">
+        <!-- Icon -->
+        <div id="right" class="flex justify-end items-stretch">
+        <img id="icon" class="w-20 h-4w-25" src="./images/sunny-icon.png" alt="" />
+        </div>
+        <!-- Weather -->
+        <p id="weather" class="font-semibold text-3xl text-white">Sunny</p>
+        <!-- Description -->
+        <p id="weather-description" class="font-semibold text-white">clear sky</p>
+        </div>
+    </div>
+
+    <!---City Weather Statistics--->
+    <div class="flex w-full justify-between md:bg-opacity-50 p-3 backdrop-blur-3xl ease-in-out duration-500 rounded-xl md:w-3/5 lg:w-[35%]"  
+    >
+
+        <div id="" class="w-full flex-col space-y-2 justify-center">
+
+            <!-- Temperature -->
+            <div
+            class="flex w-full justify-around items-center bg-white/20 rounded-lg p-1 gap-6"
+            >
+            <ion-icon class="w-8 h-8 text-white" name="thermometer"></ion-icon>
+            <div class="">
+                <p  class="text-sm text-white text-right">Temperature</p>
+            </div>
+            <div class="">
+                <p id="temperature" class="font-bold text-sm text-right text-[#ff5a00]">24.08 °C</p>         
+            </div>
+            </div>
+
+            <!-- Wind Speed -->
+            <div
+                class="flex w-full justify-around items-center bg-white/20 rounded-lg p-1 gap-6"
+            >
+            <ion-icon class="w-8 h-8 text-white" name="speedometer"></ion-icon>
+            <div class="">
+                <p class="text-sm text-white text-right">Wind Speed</p>
+            </div>
+            <div class="">
+                <p id="wind-speed" class="font-bold text-sm text-right text-[#ff5a00] ">1.18 m/s</p>
+                
+            </div>
+            </div>
+
+            <!-- Humidity -->
+            <div
+            class="flex w-full justify-around items-center bg-white/20 rounded-lg p-1 gap-6"
+            >
+            <ion-icon class="w-8 h-8 text-white" name="rainy"></ion-icon>
+            <div class="">
+            <p class="text-sm text-white text-right">Humidity</p>
+            </div>
+            <div class="">
+                <p id="humidity" class="font-bold text-sm text-right text-[#ff5a00] ">89 %</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+     <!---Daily forecast--->
+    <p class=" text-white font-semibold text-2xl gap-2" >3 Days Forecast</p>
+
+    <div class="flex max-w-screen-lg mx-auto">
+    <!-- Day 1 -->
+    <div class="flex-2  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 mr-4 shadow-md cursor-pointer transform ease-in-out hover:scale-[105%]">
+      <p id="day1" class="text-lg font-bold text-white">Day 1</p>
+      <img id="wicon1" class="w-10 h-10" src="./images/116.png" alt=""></img>
+      <p id="temperature1" class="text-lg text-[#ff5a00]">25°C</p>
+    </div>
+  
+    <!-- Day 2 -->
+    <div class="flex-2  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 mr-4 shadow-md cursor-pointer transform ease-in-out hover:scale-[105%]">
+      <p id="day2" class="text-lg font-bold text-white">Day 2</p>
+      <img id="wicon2" class="w-10 h-10" src="./images/116.png" alt=""></img>
+      <p id="temperature2" class="text-lg text-[#ff5a00]">35°C</p>
+    </div>
+  
+    <!-- Day 3 -->
+    <div class="flex-2  bg-white/20 duration-500 backdrop-blur-sm rounded-md p-4 shadow-md cursor-pointer transform ease-in-out hover:scale-[105%]">
+      <p id="day3" class="text-lg font-bold text-white">Day 3</p>
+      <img id="wicon3" class="w-10 h-10" src="./images/116.png" alt=""></img>
+      <p id="temperature3" class="text-lg text-[#ff5a00]">25°C</p>
+    </div>
+    
+  </div>
+<script src="./main.js"></script>  
+<script src="script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
