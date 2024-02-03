@@ -20,3 +20,7 @@ have a good internet network
 downloand or clone the WeaCast project file from the github page to you system or CLI
 install the tailwind package
 run/open the index.html file to deploy it on any browser of your choice
+
+Hosted server link
+
+https://weather-mirrar-xi.vercel.app/
